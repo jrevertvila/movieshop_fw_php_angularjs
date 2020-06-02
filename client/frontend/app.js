@@ -1,4 +1,4 @@
-var movieshop = angular.module('movieshop', ['ngRoute','ngMaterial']);
+var movieshop = angular.module('movieshop', ['ngRoute','ngMaterial','angularCSS']);
 movieshop.config(['$routeProvider', '$locationProvider',
 function ($routeProvider, $locationProvider) {
         $routeProvider

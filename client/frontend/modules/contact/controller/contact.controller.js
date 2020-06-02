@@ -1,4 +1,5 @@
-movieshop.controller('contactCtrl', ["$scope","services",function($scope,services){
+movieshop.controller('contactCtrl', ["$scope","services","$css",function($scope,services,$css){
+
 	$scope.contact = {
         name: "Joel Revert Vila",
         email: "joel.iestacio@gmail.com",
@@ -16,10 +17,6 @@ movieshop.controller('contactCtrl', ["$scope","services",function($scope,service
             "issue": $scope.contact.issue,
             "token":'contact_form'
         };
-
-        var contact_form = JSON.stringify(data);
-        
-        console.log(data);
         
         services.post('contact', 'send_contact', data).then(function (response) {
             check = JSON.parse(response);
@@ -33,4 +30,8 @@ movieshop.controller('contactCtrl', ["$scope","services",function($scope,service
         });
         console.log("click");
     };
+
+    $css.remove(['/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/header.css']);
+    $css.add('/movieshop_fw_php_angularjs/client/frontend/assets/css/header.css');
+    
 }]);

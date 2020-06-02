@@ -20,8 +20,8 @@ function loadClasses($className) {
         $model_name = $porciones[1];
         $model_name = strtoupper($model_name);
     }
-        if (file_exists('modules/client/modules/' . $module_name . '/model/'.$model_name.'/' . $className . '.class.singleton.php')) {
-            set_include_path('modules/client/modules/' . $module_name . '/model/'.$model_name.'/');
+        if (file_exists('modules/' . $module_name . '/model/'.$model_name.'/' . $className . '.class.singleton.php')) {
+            set_include_path('modules/' . $module_name . '/model/'.$model_name.'/');
             spl_autoload($className);
         }
         //model

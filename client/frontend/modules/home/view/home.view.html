@@ -1,13 +1,31 @@
-<link rel="stylesheet" href="/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/style.css"/>
-<link rel="stylesheet" href="/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/header.css"/>
+<!-- <link rel="stylesheet" href="/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/style.css"/> -->
+<!-- <link rel="stylesheet" href="/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/header.css"/> -->
 <main>
     <div class="container-wrapper">
         <div class="-carousel-rating-films">
 
-            <h2 data-tr="Top Rated Movies"><i class="far fa-star"></i> </h2>
+            <h2 data-tr="Top Rated Movies"><i class="far fa-star"></i> Top Rated Movies</h2>
             <br><br>
-            <!-- CAROUSEL MOVIES DYNAMICALLY JQUERY -->
-            <div id="top-rated-movies" class="owl-carousel owl-theme"></div>
+
+                <data-owl-carousel class="owl-carousel" data-options="{navigation: false, pagination: true, rewindNav : false}">
+                    <div owl-carousel-item="" ng-repeat="movie in ::rated_movies" class="item">
+                        <div class="item movie-carousel" id="{{::movie.id}}">
+                        
+                            <img src="{{::movie.coverimg}}">
+                            <div class="canvas-score">
+                                <span class="score-movie-carousel"> <i class="fas fa-star score-star"></i>{{::movie.score}}</span>
+                            </div>
+                            <div class="canvas-num-top">
+                                <span class="num-movie-carousel">{{$index+1}}</span>
+                            </div>
+                            <div class="footer-item">
+                                <span class="movie-title-footer">{{::movie.title}}</span>
+                            </div>
+                            <br> {{::movie.title}}</span>
+                        </div>
+                    </div>
+                </data-owl-carousel>
+                
             <br>
         </div>
         
@@ -15,10 +33,26 @@
         
         <div class="-carousel-visits-films">
         
-            <h2 data-tr="Most Viewed Movies"><i class="far fa-star"></i> </h2>
+            <h2 data-tr="Most Viewed Movies"><i class="far fa-star"></i> Most Viewed Movies</h2>
             <br><br>
-            <!-- CAROUSEL MOVIES DYNAMICALLY JQUERY -->
-            <div id="top-visited-movies" class="owl-carousel owl-theme"></div>
+            <data-owl-carousel class="owl-carousel" data-options="{navigation: false, pagination: true, rewindNav : false}">
+                <div owl-carousel-item="" ng-repeat="movie in ::most_viewed_movies" class="item">
+                    <div class="item movie-carousel" id="{{::movie.id}}">
+                    
+                        <img src="{{::movie.coverimg}}">
+                        <div class="canvas-score">
+                            <span class="score-movie-carousel"> <i class="fas fa-star score-star"></i>{{::movie.score}}</span>
+                        </div>
+                        <div class="canvas-num-top">
+                            <span class="num-movie-carousel">{{$index+1}}</span>
+                        </div>
+                        <div class="footer-item">
+                            <span class="movie-title-footer">{{::movie.title}}</span>
+                        </div>
+                        <br> {{::movie.title}}</span>
+                    </div>
+                </div>
+            </data-owl-carousel>
             <br>
         </div>
         
