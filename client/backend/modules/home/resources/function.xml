@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>list_home</name>
+        <uri>list_home</uri>
+    </function>
+
+    <function>
+        <name>rated_movies</name>
+        <uri>rated_movies</uri>
+    </function>
+
+    <function>
+        <name>visited_movies</name>
+        <uri>visited_movies</uri>
+    </function>
+
+    <function>
+        <name>visited_genres</name>
+        <uri>visited_genres</uri>
+    </function>
+
+    <function>
+        <name>sum_visit_genre</name>
+        <uri>sum_visit_genre</uri>
+    </function>
+</functions>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>list_login</name>
+        <uri>list_login</uri>
+    </function>
+
+    <function>
+        <name>createUser</name>
+        <uri>createUser</uri>
+    </function>
+
+    <function>
+        <name>active_user</name>
+        <uri>active_user</uri>
+    </function>
+
+    <function>
+        <name>loginUser</name>
+        <uri>loginUser</uri>
+    </function>
+
+    <function>
+        <name>test</name>
+        <uri>test</uri>
+    </function>
+
+    <function>
+        <name>request_change_password_view</name>
+        <uri>change_password</uri>
+    </function>
+
+    <function>
+        <name>sendEmailRequestPass</name>
+        <uri>sendEmailRequestPass</uri>
+    </function>
+
+
+    <function>
+        <name>change_password_view</name>
+        <uri>new_password</uri>
+    </function>
+
+    <function>
+        <name>change_new_password</name>
+        <uri>change_new_password</uri>
+    </function>
+
+    <function>
+        <name>firebase_login</name>
+        <uri>firebase_login</uri>
+    </function>
+
+    <function>
+        <name>check_activity_token</name>
+        <uri>check_activity_token</uri>
+    </function>
+
+    <function>
+        <name>get_new_token</name>
+        <uri>get_new_token</uri>
+    </function>
+
+    <function>
+        <name>get_user_id</name>
+        <uri>get_user_id</uri>
+    </function>
+
+</functions>

@@ -1,0 +1,71 @@
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFH2cZ9auX0pFzikPfaJgkJuQFS5EsDUM&callback=initMap"type="text/javascript"></script> 
+<script src="/movieshop_fw_php_angularjs/client/frontend/modules/contact/view/js/maps.js"></script>
+<main>
+    <div class="container-wrapper">
+        <div class="contact-wrapper">
+            <div id="map" class="mapa"></div>
+                <div class="contact-form">
+                    <div class="contact-inputs">
+
+                        <form class="form-contact" method="post" name="formContact" id="formContact">
+                        <div class="top-canvas">
+                            <h4 class="title">Contact Us</h4>
+                            <button type="button" class="send-contact" id="submit" ng-click="SubmitContact()">Send</button>
+                        </div>
+                            
+                            <div class="input-form">
+                                <span id="e_name_contact" class="msg_error" ng-show="formContact.name_contact.$error.required && (formContact.name_contact.$dirty || formContact.name_contact.$touched)">Introduzca un nombre</span>
+                                <input required type="text" ng-model="contact.name" id="name-contact" name="name_contact" placeholder="Name *">
+                            </div>
+                            
+                            <div class="input-form">
+                                <span id="e_email_contact" class="msg_error" ng-show="formContact.email_contact.$error.required && (formContact.email_contact.$dirty || formContact.email_contact.$touched)">Introduzca un email</span>
+                                <input required type="email" ng-model="contact.email" id="email-contact" name="email_contact" placeholder="Email *">
+                            </div>
+                            
+                            
+                            <div class="input-form">
+                                <span id="e_tlf_contact" class="msg_error" ng-show="formContact.tlf_contact.$error.required && (formContact.tlf_contact.$dirty || formContact.tlf_contact.$touched)">Introduzca un tlf</span>
+                                <input required type="text" ng-model="contact.tlf" id="tlf-contact" name="tlf_contact" placeholder="Tlf">
+                            </div>
+                            
+                            <div class="input-form">
+                                <span id="e_location_contact" class="msg_error" ng-show="formContact.location_contact.$error.required && (formContact.location_contact.$dirty || formContact.location_contact.$touched)">Introduzca un país</span>
+                                <input required type="text" ng-model="contact.location" id="location-contact" name="location_contact" placeholder="Location *">
+                            </div>
+                            <div class="textarea-form">
+                                <span id="e_issue_contact" class="msg_error" ng-show="formContact.issue_contact.$error.required && (formContact.issue_contact.$dirty || formContact.issue_contact.$touched)">Introduzca el asunto del mensaje</span>
+                                <textarea required name="issue_contact" ng-model="contact.issue" id="issue-contact" cols="30" rows="10" placeholder="Put some text...  *"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="top-canvas">
+                            <h1>Information</h1>
+                        </div>
+                        
+                        <div class="address-info item">
+                            <h4>Address</h4>
+                            <span>Ontinyent, 46870</span>
+                            <span>Av. Almaig, 96</span>
+                        </div>
+                        <div class="schedule-info item">
+                            <h4>Schedule</h4>
+                            <span>Monday to Saturday</span>
+                        </div>
+                        <div class="tlf-info item">
+                            <h4>Phone</h4>
+                            <span>
+                                TLF: 962384567
+                            </span>
+                            <span>
+                                MOBILE: 633422376
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

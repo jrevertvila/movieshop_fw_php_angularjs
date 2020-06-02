@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+    <module>
+        <name>home</name>
+        <uri>home</uri>
+        <default_function>list_home</default_function>
+    </module>
+    <module>
+        <name>contact</name>
+        <uri>contact</uri>
+        <default_function>list_contact</default_function>
+    </module>
+    <module>
+        <name>shop</name>
+        <uri>shop</uri>
+        <default_function>list_shop</default_function>
+    </module>
+    <module>
+        <name>search</name>
+        <uri>search</uri>
+    </module>
+    <module>
+        <name>login</name>
+        <uri>login</uri>
+        <default_function>list_login</default_function>
+    </module>
+    <module>
+        <name>profile</name>
+        <uri>profile</uri>
+        <default_function>account_info</default_function>
+    </module>
+
+    <module>
+        <name>cart</name>
+        <uri>cart</uri>
+        <default_function>list_cart</default_function>
+    </module>
+</modules>
