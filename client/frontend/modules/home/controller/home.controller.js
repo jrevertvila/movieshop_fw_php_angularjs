@@ -13,6 +13,11 @@ movieshop.controller('homeCtrl', ["$scope","services","$css",function($scope,ser
 		console.log(data);
 		$scope.most_viewed_movies = data;
 	});
+
+	getApiMovies("The lord of the rings").then(function(data){
+		console.log(data.Search);
+		$scope.api_movies = data.Search;
+    });
 	
 
 }]).directive("owlCarousel", function() {
@@ -47,3 +52,23 @@ movieshop.controller('homeCtrl', ["$scope","services","$css",function($scope,ser
 		}
 	};
 }]);
+
+
+var getApiMovies = function(urlTitle) {
+    title = urlTitle.split(' ').join('+');
+    return new Promise(function(resolve, reject){
+        $.ajax({
+            type: 'GET',
+            url: 'http://www.omdbapi.com/?s='+title+'&apikey='+API_OMDb+'&plot=full',
+            dataType: 'json',
+        })
+        .done(function(data){
+            // console.log(data);
+            resolve(data);
+        })
+        .fail(function(data){
+            console.log(data);
+            reject("Error");
+        });
+    })
+}

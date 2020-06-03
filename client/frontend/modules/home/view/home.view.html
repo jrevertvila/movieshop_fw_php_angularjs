@@ -59,10 +59,29 @@
         <hr>
         
         <div>
-            <h2 data-tr="Api Movies Test"><i class="far fa-star"></i></h2>
+            <h2 data-tr="Api Movies Test"><i class="far fa-star"></i> Api Movies Test</h2>
             <br><br>
-            <div id="canvas-api-movies" class="canvas-api"></div>
+            <div id="canvas-api-movies" class="canvas-api">
+                <data-owl-carousel class="owl-carousel" data-options="{navigation: false, pagination: true, rewindNav : false}">
+                    <div owl-carousel-item="" ng-repeat="movie in ::api_movies" class="item">
+                        <div class="item movie-carousel card-api-movie" id="{{::movie.imdbID}}">
+
+                            <img src="{{::movie.Poster}}">
+                            <div class="canvas-score">
+                                <span class="score-movie-carousel"> <i class="fas fa-star score-star"></i>0</span>
+                            </div>
+                            <div class="footer-item">
+                                <span class="movie-title-footer">{{::movie.Title}}</span>
+                            </div>
+                            <br> <span>{{::movie.title}}</span>
+                        </div>
+                    </div>
+                </data-owl-carousel>
+            </div>
             <br>
+        </div>
+
+
         </div>
         
         <hr>
