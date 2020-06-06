@@ -37,7 +37,7 @@ class controller_home {
 
     function visited_genres(){
 
-        $json = loadModel(CLIENT_HOME_MODEL, "home_model", "visited_genres", $_POST['offset']);
+        $json = loadModel(CLIENT_HOME_MODEL, "home_model", "visited_genres");
         echo json_encode($json);        
     }
 

@@ -24,8 +24,8 @@
 		public function select_top10_visited_movies(){
 			return $this->dao->select_data_visited_movies($this->db);
 		}
-		public function select_visited_genres($offset){
-			return $this->dao->select_data_visited_genres($this->db,$offset);
+		public function select_visited_genres(){
+			return $this->dao->select_data_visited_genres($this->db);
 		}
 		public function sum_visit_genre($id){
 			return $this->dao->sum_visit_genre($this->db,$id);

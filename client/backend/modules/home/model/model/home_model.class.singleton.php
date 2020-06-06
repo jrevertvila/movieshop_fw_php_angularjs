@@ -21,8 +21,8 @@ class home_model {
     public function visited_movies(){
         return $this->bll->select_top10_visited_movies();
     }
-    public function visited_genres($offset){
-        return $this->bll->select_visited_genres($offset);
+    public function visited_genres(){
+        return $this->bll->select_visited_genres();
     }
     public function sum_visit_genre($id){
         return $this->bll->sum_visit_genre($id);

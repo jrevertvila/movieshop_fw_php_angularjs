@@ -90,10 +90,18 @@
             <h2 data-tr="Most Viewed Genres"><i class="far fa-star"></i></h2>
             <br><br>
             <!-- GENRES ON CARDS -->
-            <div id="canvas-card-genres"></div>
+            <div id="canvas-card-genres">
+                    <div ng-repeat='genre in genres | limitTo:totalDisplayed'>
+                        <div class="card-genre" id="{{::genre.id}}">
+                            <span class="card-genre-title">{{::genre.genre}} {{::genre.visits}}</span>
+                        </div>
+                    </div>
+            </div>
+            
             <!-- <a id="load-more-genres">LOAD MORE</a> -->
             <br>
         </div>
+        
         
         
         <hr>

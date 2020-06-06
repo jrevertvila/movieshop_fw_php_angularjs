@@ -25,9 +25,9 @@ class home_dao {
         return $db->listar($stmt);
     }
 
-    public function select_data_visited_genres($db,$offset) {
+    public function select_data_visited_genres($db) {
         // return $offset;
-        $sql = "SELECT * FROM genres ORDER BY visits DESC LIMIT 3 OFFSET " .$offset;
+        $sql = "SELECT * FROM genres ORDER BY visits DESC";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
