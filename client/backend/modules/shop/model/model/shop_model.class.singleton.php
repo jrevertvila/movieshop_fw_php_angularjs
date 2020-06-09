@@ -13,51 +13,64 @@ class shop_model {
         }
         return self::$_instance;
     }
-    public function getLimitMovies($data){
-        return $this->bll->getLimitMovies($data);
-    }
 
-    public function getMoviesFiltersGenres($data){
-        return $this->bll->getMoviesFiltersGenres($data);
-    }
-
-    public function getMoviesByTitle($data){
-        return $this->bll->getMoviesByTitle($data);
-    }
-
-    public function checkFavUser($data){
-        return $this->bll->checkFavUser($data);
-    }
-
-    public function removeFav($data){
-        return $this->bll->removeFav($data);
-    }
-
-    public function addFav($data){
-        return $this->bll->addFav($data);
-    }
-
-    public function countAllMovies(){
-        return $this->bll->countAllMovies();
-    }
-
-    public function getMoviesFiltersGenresCount($data){
-        return $this->bll->getMoviesFiltersGenresCount($data);
-    }
-
-    public function sumVisitGenre($data){
-        return $this->bll->sumVisitGenre($data);
+    public function getAllMovies(){
+        return $this->bll->getAllMovies();
     }
 
     public function getAllGenres(){
         return $this->bll->getAllGenres();
     }
 
-    public function sumVisitMovie($data){
-        return $this->bll->sumVisitMovie($data);
+    public function getAllMoviesByGenres($data){
+        return $this->bll->getAllMoviesByGenres($data);
     }
+
+    // public function getLimitMovies($data){
+    //     return $this->bll->getLimitMovies($data);
+    // }
+
+    // public function getMoviesFiltersGenres($data){
+    //     return $this->bll->getMoviesFiltersGenres($data);
+    // }
+
+    // public function getMoviesByTitle($data){
+    //     return $this->bll->getMoviesByTitle($data);
+    // }
+
+    // public function checkFavUser($data){
+    //     return $this->bll->checkFavUser($data);
+    // }
+
+    // public function removeFav($data){
+    //     return $this->bll->removeFav($data);
+    // }
+
+    // public function addFav($data){
+    //     return $this->bll->addFav($data);
+    // }
+
+    // public function countAllMovies(){
+    //     return $this->bll->countAllMovies();
+    // }
+
+    // public function getMoviesFiltersGenresCount($data){
+    //     return $this->bll->getMoviesFiltersGenresCount($data);
+    // }
+
+    // public function sumVisitGenre($data){
+    //     return $this->bll->sumVisitGenre($data);
+    // }
+
+    // public function getAllGenres(){
+    //     return $this->bll->getAllGenres();
+    // }
+
+    // public function sumVisitMovie($data){
+    //     return $this->bll->sumVisitMovie($data);
+    // }
     
-    public function getMovieById($data){
-        return $this->bll->getMovieById($data);
-    }
+    // public function getMovieById($data){
+    //     return $this->bll->getMovieById($data);
+    // }
 }

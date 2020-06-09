@@ -1,0 +1,130 @@
+<link href="/movieshop_fw_php_angularjs/client/frontend/modules/shop/view/css/filters.css" rel="stylesheet" type="text/css" />
+<link href="/movieshop_fw_php_angularjs/client/frontend/modules/shop/view/css/cards.css" rel="stylesheet" type="text/css" />
+<link href="/movieshop_fw_php_angularjs/client/frontend/modules/shop/view/css/details.css" rel="stylesheet" type="text/css" />
+<link href="/movieshop_fw_php_angularjs/client/frontend/modules/shop/view/css/style.css" rel="stylesheet" type="text/css" />
+<main>
+    <!-- <select ng-model="selected" ng-change="switchFilter()">
+        <option value="title">Title</option>
+        <option value="release_date">Release Date</option>
+        <option value="director">Director</option>
+        <option value="score">Score</option>
+        <option value="visits">Views</option>
+    </select> -->
+    <div class="container-wrapper">
+        <div id="canvas-shop">
+            <div id="shopContainer">
+                <div id="filters-shop">
+                    <h1 class="title-filters">Filters</h1>
+                    <hr>
+                    <span class="title-section">Order by:</span>
+                    <div class="item-filter">
+                        <span class="sub-title-filter">Alphabetically: </span>
+                        <select id="title" class="order-filter" ng-model="selected" ng-change="switchFilter()">
+                            <option value="title">Ascendent</option>
+                            <option value="-title">Descendent</option>
+                        </select>
+                    </div>
+                    <div class="item-filter">
+                        <span class="sub-title-filter">Release Date: </span>
+                        <select id="release_date" class="order-filter" ng-model="selected" ng-change="switchFilter()">
+                            <option value="-release_date">Ascendent</option>
+                            <option value="release_date">Descendent</option>
+                        </select>
+                    </div>
+                    <div class="item-filter">
+                        <span class="sub-title-filter">Rating: </span>
+                        <select id="score" class="order-filter" ng-model="selected" ng-change="switchFilter()">
+                            <option value="-score">Ascendent</option>
+                            <option value="score">Descendent</option>
+                        </select>
+                    </div>
+                    <div class="item-filter">
+                        <span class="sub-title-filter">Visits: </span>
+                        <select id="visits" class="order-filter" ng-model="selected" ng-change="switchFilter()">
+                            <option value="-visits">Ascendent</option>
+                            <option value="visits">Descendent</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <span class="title-section">Genres: </span>
+                    <div class="genres-wrapper">
+                        <div ng-repeat="genre in genres">
+                            <label class="label-genre">
+                                <!-- <input type="checkbox" ng-model="folder[album.name]" value={{genre.id}}/> -->
+                                <input type="checkbox" ng-model="genre.selected" ng-change="addGenre(genre)"/>
+                                <!-- <input type="checkbox" ng-model="selected" ng-click="loadItemsGenres()" id="{{genre.id}}" value="{{genre.id}}" class="genre-filter"> -->
+                                {{genre.genre}}
+                            </label>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cardsContainer" class="cards-container">
+                    <div ng-repeat="movie in pagedMovies">
+
+                        <div class="card-shop" id="{{movie.id}}">
+                            <div class="buttons-card">
+                                <a class="card-button btn-card-cart"><span data-tr="Add to cart"></span></a>
+                                <a class="card-button btn-card-view" href="#"><span data-tr="View"></span></a>
+                            </div>
+    
+                            <div class="card-shop-img get-details">
+                                <div class="black-card"></div>
+                                <img class="img-size" src="{{movie.coverimg}}">
+        
+                            </div>
+                            
+                            <div class="card-shop-data">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+                            </div>
+                            <div class="favs-movie">
+                                <i class="fas fa-heart fav-shop"></i>
+                                <span>{{movie.favs}}</span>
+                            </div>
+                            <div class="info-button" id="info-button">
+                                <i class="fa fa-bars"></i>
+                            </div>
+        
+                            <div class="card-shop-footer get-details">
+                                <div class="effect-3d"></div>
+                                <div class="card-footer-text">
+                                    <div class="top-footer-card">
+                                        <span>{{movie.title}}</span>
+                                        
+                                    </div>
+        
+                                    <div class="card-rate">
+                                        <strong>
+                                           <i class="fa fa-fw fa-star"></i>
+                                           {{movie.score}}
+                                        </strong>
+                                       <div class="likes-card">
+                                            <i class="far fa-eye"></i>
+                                            <span>{{movie.visits}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage"></uib-pagination>
+                    
+
+                  
+
+                    
+
+                </div>
+                <div id="details-movie"></div>
+            </div>
+            
+            <div id="page-selection"></div>
+        </div>
+    </div>
+</main>

@@ -6,6 +6,21 @@
     </function>
 
     <function>
+        <name>getAllMovies</name>
+        <uri>getAllMovies</uri>
+    </function>
+
+    <function>
+        <name>getAllGenres</name>
+        <uri>getAllGenres</uri>
+    </function>
+
+    <function>
+        <name>getAllMoviesByGenres</name>
+        <uri>getAllMoviesByGenres</uri>
+    </function>
+
+    <function>
         <name>getMovies</name>
         <uri>getMovies</uri>
     </function>
