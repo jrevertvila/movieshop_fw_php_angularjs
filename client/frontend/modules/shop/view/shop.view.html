@@ -63,7 +63,7 @@
                 <div id="cardsContainer" class="cards-container">
                     <div ng-repeat="movie in pagedMovies">
 
-                        <div class="card-shop" id="{{movie.id}}">
+                        <div class="card-shop" id="{{movie.id}}" ng-click='details($event)'>
                             <div class="buttons-card">
                                 <a class="card-button btn-card-cart"><span data-tr="Add to cart"></span></a>
                                 <a class="card-button btn-card-view" href="#"><span data-tr="View"></span></a>
@@ -113,7 +113,7 @@
 
 
                     </div>
-                    <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage"></uib-pagination>
+                    <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage" rotate="false"></uib-pagination>
                     
 
                   

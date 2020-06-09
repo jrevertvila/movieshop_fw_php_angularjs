@@ -33,6 +33,11 @@ class controller_shop {
         echo json_encode($json); 
     }
 
+    function getMovie(){
+        $json = loadModel(CLIENT_SHOP_MODEL, "shop_model", "getMovie",$_GET["param"]);
+        echo json_encode($json); 
+    }
+
     // function getMovies(){
 
     //     $data = array(

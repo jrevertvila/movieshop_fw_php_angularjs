@@ -26,6 +26,10 @@ class shop_model {
         return $this->bll->getAllMoviesByGenres($data);
     }
 
+    public function getMovie($data){
+        return $this->bll->getMovie($data);
+    }
+
     // public function getLimitMovies($data){
     //     return $this->bll->getLimitMovies($data);
     // }

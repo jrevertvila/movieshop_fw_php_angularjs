@@ -29,6 +29,10 @@
 		public function getAllMoviesByGenres($data){
 			return $this->dao->getAllMoviesByGenres($this->db,$data);
 		}
+
+		public function getMovie($data){
+			return $this->dao->getMovie($this->db,$data);
+		}
 		
 		// public function getLimitMovies($data){
 		// 	// return $data;

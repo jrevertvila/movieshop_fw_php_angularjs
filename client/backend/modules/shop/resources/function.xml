@@ -26,6 +26,11 @@
     </function>
 
     <function>
+        <name>getMovie</name>
+        <uri>getMovie</uri>
+    </function>
+
+    <function>
         <name>getMoviesFiltered</name>
         <uri>getMoviesFiltered</uri>
     </function>

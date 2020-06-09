@@ -1,4 +1,4 @@
-movieshop.controller('shopCtrl', ["$scope","services","$css","getAllMovies","getAllGenres",function($scope,services,$css,getAllMovies,getAllGenres){
+movieshop.controller('shopCtrl', ["$scope","$window","services","$css","getAllMovies","getAllGenres",function($scope,$window,services,$css,getAllMovies,getAllGenres){
 	$css.remove(['/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/style.css','/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/header.css']);
 	$css.add(['/movieshop_fw_php_angularjs/client/frontend/assets/css/header.css']);
 
@@ -30,13 +30,13 @@ movieshop.controller('shopCtrl', ["$scope","services","$css","getAllMovies","get
     $scope.switchFilter = function() {
         filter = $scope.selected;
         allMovies = allMovies.sort(dynamicSort(filter));
-        console.log(allMovies);
+        // console.log(allMovies);
         $scope.currentPage = 1;
         setPagingData($scope.currentPage);
         // $scope.$apply();
     }
     
-    
+
     //SELECT GENRES AND LOAD MOVIES
 
     $scope.selected_genres = [];
@@ -65,6 +65,11 @@ movieshop.controller('shopCtrl', ["$scope","services","$css","getAllMovies","get
             });
         }
         $scope.selected = false;
+    }
+
+    $scope.details = function(data){
+        console.log(data.delegateTarget.id);
+        $window.location.href = "#shop/"+data.delegateTarget.id;
     }
 
 }]);

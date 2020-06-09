@@ -1,4 +1,4 @@
-var movieshop = angular.module('movieshop', ['ngRoute','ngMaterial','angularCSS','ui.bootstrap','angularUtils.directives.dirPagination']);
+var movieshop = angular.module('movieshop', ['ngRoute','ngMaterial','angularCSS','ui.bootstrap']);
 movieshop.config(['$routeProvider', '$locationProvider',
 function ($routeProvider, $locationProvider) {
         $routeProvider
@@ -32,6 +32,17 @@ function ($routeProvider, $locationProvider) {
                                 },
                                 getAllGenres: function (services) {
                                         return services.get('shop','getAllGenres');
+                                }
+                        }
+                })
+
+                .when("/shop/:id", {
+                        templateUrl: "frontend/modules/shop/view/shop_details.view.html",
+                        controller: "shopDetailsCtrl",
+                        resolve: {
+                                getMovie: function (services, $route) {
+                                        // console.log(services.get('shop','getMovie',$route.current.params.id));
+                                        return services.get('shop','getMovie',$route.current.params.id);
                                 }
                         }
                 })

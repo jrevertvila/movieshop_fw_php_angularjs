@@ -31,6 +31,12 @@ class shop_dao {
         return $db->listar($stmt);
     }
 
+    public function getMovie($db,$data) {
+        $sql = 'SELECT * FROM films WHERE id = '.$data;
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+
     // public function getLimitMovies($db,$data) {
     //     $sql = 'SELECT *,(SELECT COUNT(*) FROM user_favorites_movies WHERE id_movie=f.id) as favs FROM films f ORDER BY '.$data['order'].' '.$data['dir'].' LIMIT '.$data['limit'].' OFFSET '.$data['offset'];
     //     $stmt = $db->ejecutar($sql);
