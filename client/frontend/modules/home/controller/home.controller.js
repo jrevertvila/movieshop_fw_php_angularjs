@@ -1,8 +1,9 @@
-movieshop.controller('homeCtrl', ["$scope","services","$css","rated_movies","visited_movies","visited_genres",function($scope,services,$css,rated_movies,visited_movies,visited_genres){
+movieshop.controller('homeCtrl', ["$scope","services","$css","rated_movies","visited_movies","visited_genres","showDetails",function($scope,services,$css,rated_movies,visited_movies,visited_genres,showDetails){
 	$css.remove(['/movieshop_fw_php_angularjs/client/frontend/assets/css/header.css']);
 	$css.add(['/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/style.css','/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/header.css']);
 	$css.remove('/movieshop_fw_php_angularjs/client/frontend/modules/home/controller/test.js');
 
+	// localStorage.removeItem('searchText');
 
 	$scope.rated_movies = rated_movies;
 	$scope.most_viewed_movies = visited_movies;
@@ -15,6 +16,10 @@ movieshop.controller('homeCtrl', ["$scope","services","$css","rated_movies","vis
 		$scope.api_movies = data.Search;
 	});
 	
+	$scope.goToDetails = function(data){
+		console.log(data);
+        showDetails.film(data.currentTarget.id);
+     }
 
 	//SCROLL
 	window.onscroll = function() {

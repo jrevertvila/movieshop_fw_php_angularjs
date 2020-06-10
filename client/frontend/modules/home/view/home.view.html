@@ -9,7 +9,7 @@
 
                 <data-owl-carousel class="owl-carousel" data-options="{navigation: false, pagination: true, rewindNav : false}">
                     <div owl-carousel-item="" ng-repeat="movie in ::rated_movies" class="item">
-                        <div class="item movie-carousel" id="{{::movie.id}}">
+                        <div class="item movie-carousel" id="{{::movie.id}}" ng-click="goToDetails($event)">
                         
                             <img src="{{::movie.coverimg}}">
                             <div class="canvas-score">
@@ -37,7 +37,7 @@
             <br><br>
             <data-owl-carousel class="owl-carousel" data-options="{navigation: false, pagination: true, rewindNav : false}">
                 <div owl-carousel-item="" ng-repeat="movie in ::most_viewed_movies" class="item">
-                    <div class="item movie-carousel" id="{{::movie.id}}">
+                    <div class="item movie-carousel" id="{{::movie.id}}" ng-click="goToDetails($event)">
                     
                         <img src="{{::movie.coverimg}}">
                         <div class="canvas-score">

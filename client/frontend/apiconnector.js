@@ -41,21 +41,28 @@ movieshop.factory("services", ['$http','$q', function ($http, $q) {
             });
             return promise;
          };
-
-      //    obj.get = function (module, functi, dada) {
-      //       var defered=$q.defer();
-      //       var promise=defered.promise;
-      //       $http({
-      //             method: 'GET',
-      //             url: serviceBase + module + '&function=' + functi + '&param=' + dada
-      //         }).success(function(data, status, headers, config) {
-      //            console.log(data);
-      //            defered.resolve(data);
-      //         }).error(function(data, status, headers, config) {
-      //            defered.reject(data);
-      //         });
-      //       return promise;
-      //   };
         
     return obj;
-}]);
+    
+}]).factory('DataTransfer', function () {
+
+   var data = {};
+
+   return {
+       getAllMovies: function () {
+           return data;
+       },
+       setAllMovies: function (UserDetails) {
+           data = UserDetails;
+       }
+   };
+
+}).factory('showDetails', function ($window) {
+      return {
+         film: function (id) {
+            console.log("entra");
+            $window.location.href = "#shop/"+id
+         }
+      };
+
+});

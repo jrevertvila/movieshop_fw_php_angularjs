@@ -26,7 +26,7 @@
   
               <a id="contact-us" class="header-button" href="#contact" data-tr="Contact Us">Contact Us</a>
   
-              <!-- <a id="header-register" class="header-button" href="#" data-tr="Login"></a> -->
+              <a id="header-register" class="header-button" href="#login" data-tr="Login">Login</a>
               
               <a id="header-cart" class="header-button cart-header-hover" href="#"><span data-tr="Cart"></span><i class="fas fa-shopping-cart"></i><span class="num-items-cart-header"></span>Cart</a>
 
@@ -49,19 +49,28 @@
       
   
   </div>
-  <div class="filters">
+  <div class="filters" ng-controller="searchCtrl">
       
       <div class="form-all">
           <form class="form-search">
               <i class="fas fa-search icon-search"></i>
       
-              <input type="text" name="search-bar" id="search-bar" placeholder="Write the name of the movie .." autocomplete="off">
+              <input ng-keyup='fetchMovies()' ng-click='searchboxClicked($event);' ng-enter="goToShop()" ng-model='searchText' type="text" name="search-bar" id="search-bar" placeholder="Write the name of the movie .." autocomplete="off">
               |
-              <select id="genres" class="" name = 'genres[]' multiple="multiple"></select>
+              <!-- <select id="genres" class="" name = 'genres[]' multiple="multiple"></select> -->
+              <div ng-dropdown-multiselect="" options="genresDropdown" selected-model="selectedGenres" checkboxes="true" extra-settings="settings"></div>
               |
-              <a href="#" class="search-button">Search</a>
+              <div ng-click="goToShop()" class="search-button"><span>Search</span></div>
           </form>
-          <div class="autocomplete-div"></div>
+          <div class="autocomplete-div">
+
+            <div class="item-autocomplete" ng-click="goToDetails($event)" id="{{result.id}}" ng-repeat="result in searchedMovies">
+                <img src="{{result.coverimg}}" class="img-item-autocomplete">
+                <span class="text-item-autocomplete">{{result.title}}</span>
+                <span class="text-item-autocomplete">Genres: </span>
+            </div>
+
+          </div>
       </div>
       
   </div>

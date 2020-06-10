@@ -1,4 +1,4 @@
-var movieshop = angular.module('movieshop', ['ngRoute','ngMaterial','angularCSS','ui.bootstrap']);
+var movieshop = angular.module('movieshop', ['ngRoute','ngMaterial','angularCSS','ui.bootstrap','angularjs-dropdown-multiselect']);
 movieshop.config(['$routeProvider', '$locationProvider',
 function ($routeProvider, $locationProvider) {
         $routeProvider
@@ -46,6 +46,30 @@ function ($routeProvider, $locationProvider) {
                                 }
                         }
                 })
+
+                // .when("/shop/search/:id", {
+                //         templateUrl: "frontend/modules/shop/view/shop_details.view.html",
+                //         controller: "shopDetailsCtrl",
+                //         resolve: {
+                //                 getMovie: function (services, $route) {
+                //                         // console.log(services.get('shop','getMovie',$route.current.params.id));
+                //                         return services.get('shop','getMovie',$route.current.params.id);
+                //                 }
+                //         }
+                // })
+
+                .when("/login", {
+                        templateUrl: "frontend/modules/login/view/login.view.html",
+                        controller: "loginCtrl"
+                })
                 
                 .otherwise("/", {redirectTo: '/'});
     }]);
+        movieshop.run(function($rootScope,services) {
+                services.get('shop','getAllMovies').then(function(data){
+                        $rootScope.getAllMovies = data;
+                });
+                services.get('shop','getAllGenres').then(function(data){
+                        $rootScope.getAllGenres = data;
+                });
+        });
