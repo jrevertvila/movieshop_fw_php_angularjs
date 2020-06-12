@@ -73,8 +73,13 @@ function ($routeProvider, $locationProvider) {
                         controller: "activeUserCtrl",
                         resolve: {
                                 activeUser: function (services, $route) {
-                                        // console.log(services.get('shop','getMovie',$route.current.params.id));
+                                        // services.post('login','active_user',$route.current.params.id).then(function(data){
+                                        //         console.log(data);
+                                        // });
+                                        // console.log($route.current.params.id);
                                         return services.get('login','active_user',$route.current.params.id);
+                                        // return services.post('login','active_user',$route.current.params.id);
+                                        // return $route.current.params.id;
                                 }
                         }
                 })

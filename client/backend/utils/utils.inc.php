@@ -12,9 +12,9 @@
             $link = "index.php?/client/#/" . $url;
         }
         if ($return) {
-            return SITE_PATH . $link;
+            return SITE_PATH . "client/#/" .$link;
         }
-        echo SITE_PATH . $link;
+        echo SITE_PATH . "client/#/" . $link;
     }
 
     //JWT FUNCTIONS

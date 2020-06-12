@@ -84,8 +84,12 @@ movieshop.controller('registerCtrl', ["$scope","services","$css",function($scope
 
 }]);
 
-movieshop.controller('activeUserCtrl', ["$scope","services","activeUser",function($scope,services,activeUser){
-	
+movieshop.controller('activeUserCtrl', ["$scope","services","activeUser","$css",function($scope,services,activeUser,$css){
+	$css.remove(['/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/style.css','/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/header.css']);
+	$css.add(['/movieshop_fw_php_angularjs/client/frontend/assets/css/header.css']);
+
+	// console.log("entra");
+	// console.log(activeUser);
 	location.href="#login";
-		location.reload();
+	location.reload();
 }]);
