@@ -9,7 +9,7 @@
             <form class="form-login" method="post" name="formRegister" id="formRegister">
                 <h4 data-tr="Sign in" class="title-form">Sign in</h4>
 
-                <span ng-show="validation" class="msg_error">This user already exists</span>
+                <span ng-show="registerVerify" class="msg_error">This user already exists</span>
                 
                 <span id="e_username" class="msg_error" ng-show="formRegister.username.$error.required && (formRegister.username.$dirty || formRegister.username.$touched)">Introduzca un username</span>
                 <input required type="text" name="username" ng-model="register.username" id="username" class="item-form-register" placeholder="Username *">

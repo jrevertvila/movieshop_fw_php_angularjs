@@ -68,7 +68,7 @@ function validateUser(){
 
         'email' => $params->email,
 
-        'password' => password_hash($params->passwd1, PASSWORD_DEFAULT),
+        'password' => password_hash($params->passwd, PASSWORD_DEFAULT),
 
         'token_check' => generate_Token_secure(20),
 

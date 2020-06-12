@@ -67,6 +67,17 @@ function ($routeProvider, $locationProvider) {
                         templateUrl: "frontend/modules/login/view/register.view.html",
                         controller: "registerCtrl"
                 })
+
+                .when("/login/active_user/:id", {
+                        templateUrl: "frontend/modules/login/view/register.view.html",
+                        controller: "activeUserCtrl",
+                        resolve: {
+                                activeUser: function (services, $route) {
+                                        // console.log(services.get('shop','getMovie',$route.current.params.id));
+                                        return services.get('login','active_user',$route.current.params.id);
+                                }
+                        }
+                })
                 
                 .otherwise("/", {redirectTo: '/'});
     }]);

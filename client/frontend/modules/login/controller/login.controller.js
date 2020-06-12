@@ -66,20 +66,26 @@ movieshop.controller('registerCtrl', ["$scope","services","$css",function($scope
         };
 		
 		services.post('login','createUser',data).then(function(data){
-			console.log(data);
-			// if(data.result){
-			// 	$scope.validation = false;
-			// 	localStorage.setItem('authToken',data.token);
-			// 	localStorage.setItem('user_avatar',data.avatar);
-			// 	location.href='#home';
-			// 	window.location.reload();
-			// }else{
-			// 	$scope.validation = true;			
-			// }
+			if(data.result){
+				console.log(data);
+				toastr.success('Account created successfully! Check your mail inbox!!');
+				setTimeout(function(){
+					location.reload();
+				},2000);
+			}else{
+				$scope.registerVerify = true;	
+			}
+			
 		});
 
         console.log(data);
 	};
 	
 
+}]);
+
+movieshop.controller('activeUserCtrl', ["$scope","services","activeUser",function($scope,services,activeUser){
+	
+	location.href="#login";
+		location.reload();
 }]);

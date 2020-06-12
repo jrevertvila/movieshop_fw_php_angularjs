@@ -9,7 +9,7 @@
                 $link .=  $aux[1]."/";
             }
         } else {
-            $link = "index.php?" . $url;
+            $link = "index.php?/client/#/" . $url;
         }
         if ($return) {
             return SITE_PATH . $link;

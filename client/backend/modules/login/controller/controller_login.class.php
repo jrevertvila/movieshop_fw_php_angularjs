@@ -77,7 +77,7 @@ class controller_login {
             $data = array( 'token'=>$_GET['param'] );;
             loadModel(CLIENT_LOGIN_MODEL, "login_model", "active_user", $data);
         }
-        self::list_login();
+        return true;
     }
     
     function request_change_password_view(){
