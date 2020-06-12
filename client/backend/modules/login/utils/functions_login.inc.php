@@ -2,10 +2,12 @@
 
 function validateLoginUser(){
     //comprobar que el email exista en la bbdd
+    $params = json_decode(file_get_contents('php://input'));
+
 
     $userArr = array(
-                'emailv' => $_POST['email-user'],
-                'passv' => $_POST['passwd-user']
+                'emailv' =>  $params->email,
+                'passv' =>  $params->passwd
     );
     
     // return $return=array('result'=>false,'errorEmail'=>loadModel(CLIENT_LOGIN_MODEL, "login_model", "verifyPassword", $userArr));
@@ -17,7 +19,7 @@ function validateLoginUser(){
     if (loadModel(CLIENT_LOGIN_MODEL, "login_model", "verifyPassword", $userArr)==false){
         return $return=array('result'=>false,'errorPassword'=>'Incorrect password');
     }
-    $userArr = array('emailv' => $_POST['email-user']);
+    $userArr = array('emailv' => $params->email);
 
     $info = loadModel(CLIENT_LOGIN_MODEL, "login_model", "userDataLocal", $userArr);
 

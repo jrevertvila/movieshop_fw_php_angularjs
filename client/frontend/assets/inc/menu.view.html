@@ -11,7 +11,7 @@
     </md-content>
 </div> -->
 
-<header ng-controller="menu">
+<header ng-controller="menuCtrl">
   <div class="header">
 
       <div class="header-main">
@@ -26,9 +26,18 @@
   
               <a id="contact-us" class="header-button" href="#contact" data-tr="Contact Us">Contact Us</a>
   
-              <a id="header-register" class="header-button" href="#login" data-tr="Login">Login</a>
+              <a id="header-register" class="header-button" href="#login" data-tr="Login" ng-hide="logged">Login</a>
               
               <a id="header-cart" class="header-button cart-header-hover" href="#"><span data-tr="Cart"></span><i class="fas fa-shopping-cart"></i><span class="num-items-cart-header"></span>Cart</a>
+
+              <div class="user-dropdown" ng-show="logged">
+                <button class="dropbtn" ng-style="profile_header_avatar" ng-class="addToggle" ng-click="toggleProfileBtn()" id='dropbtn'></button>
+                <div id="myDropdown" class="dropdown-content" ng-class="addShow">
+                    <div id="header-profile" data-tr="Profile"><span>Profile</span></div>
+                    <div id="header-orders" data-tr="Orders"><span>Orders</span></div>
+                    <div id="header-logout" data-tr="Log out" ng-click="logout()"><span>Log out</span></div>
+                </div>
+            </div>
 
               <div class="lang-div">
                       <select name="Language" id="lang" class="form-control form-control-sm">
@@ -43,6 +52,7 @@
                   <div class="cart-header-items"></div>
                   <div class="cart-header-summary"></div>
               </div>
+              
           </div>
           
       </div>

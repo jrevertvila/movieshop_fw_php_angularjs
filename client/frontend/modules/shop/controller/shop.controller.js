@@ -1,4 +1,4 @@
-movieshop.controller('shopCtrl', ["$scope","$window","services","$rootScope","$css","getAllMovies","getAllGenres",function($scope,$window,services,$rootScope,$css,getAllMovies,getAllGenres){
+movieshop.controller('shopCtrl', ["$scope","$window","services","$rootScope","$css","showDetails","getAllMovies","getAllGenres",function($scope,$window,services,$rootScope,$css,showDetails,getAllMovies,getAllGenres){
 	$css.remove(['/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/style.css','/movieshop_fw_php_angularjs/client/frontend/modules/home/view/css/header.css']);
 	$css.add(['/movieshop_fw_php_angularjs/client/frontend/assets/css/header.css']);
 

@@ -1,4 +1,4 @@
-<link href="/movieshop_fw_php_angularjs/client/frontend/assets/libraries/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<!-- <link href="/movieshop_fw_php_angularjs/client/frontend/assets/libraries/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/> -->
 <link href="/movieshop_fw_php_angularjs/client/frontend/assets/libraries/bootstrap/css/bootstrap-social.css" rel="stylesheet" type="text/css"/>
 <link href="/movieshop_fw_php_angularjs/client/frontend/modules/login/view/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="/movieshop_fw_php_angularjs/client/frontend/modules/login/view/css/recover_password.css" rel="stylesheet" type="text/css"/>
@@ -9,17 +9,23 @@
         <div class="login-canvas">
             <form class="form-login" method="post" name="formLogin" id="formLogin">
                 <h4 data-tr="Log in" class="title-form">Log in</h4>
-                <span id="e_email_login" class="msg_error"></span>
-                <span id="e_passwd_login" class="msg_error"></span>
-                <input type="email" name="email-user" id="email-user" class="item-form-login" placeholder="Email">
-                <input type="password" name="passwd-user" id="passwd-user" class="item-form-login" placeholder="Password">
+
+                <span ng-show="validation" class="msg_error">Incorrect password or email</span>
+
+                <span id="e_email_login" class="msg_error" ng-show="formLogin.email_user.$error.required && (formLogin.email_user.$dirty || formLogin.email_user.$touched)">Introduzca un email</span>
+                <span id="e_passwd_login" class="msg_error" ng-show="formLogin.passwd_user.$error.required && (formLogin.passwd_user.$dirty || formLogin.passwd_user.$touched)">Introduzca una contraseña</span>
+
+                <input required type="email" ng-model="login.email" id="email-user" name="email_user" class="item-form-login" placeholder="Email *">
+                <input required type="password" ng-model="login.passwd" id="passwd-user" name="passwd_user" class="item-form-login" placeholder="Password *">
+                <!-- <input type="email" name="email_user" id="email_user" class="item-form-login" placeholder="Email"> -->
+                <!-- <input type="password" name="passwd_user" id="passwd_user" class="item-form-login" placeholder="Password"> -->
         
-                <input name="login" class="login-button" id="login-button" type="button" value="Log In"/>
+                <input name="login" class="login-button" id="login-button" type="button" value="Log In" ng-click="submitLogin()"/>
                 <div class="div-left">
-                    <a href="#" class="forgot-passwd" data-tr="Forgot password?"></a>
+                    <a href="#" class="forgot-passwd" data-tr="Forgot password?">Forgot password?</a>
                     <div>
-                        <span data-tr="Don’t have an account?"></span>
-                        <a href="#" data-tr="Sign up" style="margin-left: 5px;" class="open-register"></a>
+                        <span data-tr="Don’t have an account?">Don’t have an account?</span>
+                        <a href="#" data-tr="Sign up" style="margin-left: 5px;" class="open-register">Sign up</a>
                     </div>
                 </div>
                 <div class="social-btns">
