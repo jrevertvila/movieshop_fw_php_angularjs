@@ -1,0 +1,43 @@
+<link href="/movieshop_fw_php_angularjs/client/frontend/assets/libraries/bootstrap/css/bootstrap-social.css" rel="stylesheet" type="text/css"/>
+<link href="/movieshop_fw_php_angularjs/client/frontend/modules/login/view/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="/movieshop_fw_php_angularjs/client/frontend/modules/login/view/css/recover_password.css" rel="stylesheet" type="text/css"/>
+<link href="/movieshop_fw_php_angularjs/client/frontend/modules/login/view/css/request_change_password.css" rel="stylesheet" type="text/css"/>
+
+<main>
+    <div class="container-wrapper">
+        <div class="login-canvas">
+            <form class="form-login" method="post" name="formRegister" id="formRegister">
+                <h4 data-tr="Sign in" class="title-form">Sign in</h4>
+
+                <span ng-show="validation" class="msg_error">This user already exists</span>
+                
+                <span id="e_username" class="msg_error" ng-show="formRegister.username.$error.required && (formRegister.username.$dirty || formRegister.username.$touched)">Introduzca un username</span>
+                <input required type="text" name="username" ng-model="register.username" id="username" class="item-form-register" placeholder="Username *">
+                
+                <span id="e_email" class="msg_error" ng-show="formRegister.email_user_sign.$error.required && (formRegister.email_user_sign.$dirty || formRegister.email_user_sign.$touched)">Introduzca un email</span>
+                <input required type="email" name="email_user_sign" ng-model="register.email" id="email-user-sign" class="item-form-register" placeholder="Email *">
+    
+                <span id="e_passwd" class="msg_error" ng-show="formRegister.passwd_user.$error.required && (formRegister.passwd_user.$dirty || formRegister.passwd_user.$touched)">Introduzca una contraseña</span>
+                <input required type="password" name="passwd_user" ng-model="register.passwd1" id="passwd-user" class="item-form-register" placeholder="Password *">
+    
+                <span id="e_passwd2" class="msg_error" ng-show="formRegister.passwd2_user.$error.required && (formRegister.passwd2_user.$dirty || formRegister.passwd2_user.$touched)">Confirme la contraseña</span>
+                <input required type="password" name="passwd2_user" ng-model="register.passwd2" id="passwd2-user" class="item-form-register" placeholder="Confirm Password *">
+    
+                <input name="sign" class="login-button" id="sign-button" type="button" value="Sign In" ng-click="submitRegister()">
+                <div class="div-left">
+                    <div>
+                        <span data-tr="Already have an account?">Already have an account?</span>
+                        <a href="" data-tr="Log in" style="margin-left: 5px;" class="open-login">Log in</a>
+                    </div>
+                </div>
+                <div class="social-btns">
+                    <a href="#" class="google-btn-signin"><img alt="google-btn" class="google-btn-signin-img" src="/movieshop_fw_php_angularjs/client/frontend/modules/login/view/img/btn_google_signin.png"></a>
+                    <a class="ghub-btn-signin btn btn-block btn-social btn-github">
+                        <i class="fab fa-github"></i> Sign in with GitHub
+                    </a>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</main>

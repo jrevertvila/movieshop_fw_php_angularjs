@@ -46,9 +46,15 @@ function validateLoginUser(){
 }
 
 function validateUser(){
-    $userArr = array('userv' => $_POST['username'],
-                    'emailv' => $_POST['email-user-sign']
-                );
+
+    $params = json_decode(file_get_contents('php://input'));
+
+    $userArr = array(
+                'userv' =>  $params->username,
+                'emailv' =>  $params->email,
+                'passv' =>  $params->passwd
+    );
+
     if (loadModel(CLIENT_LOGIN_MODEL, "login_model", "findByUsernameLocal", $userArr)){
         return $return=array('result'=>false,'errorUsername'=>'The username already exists');
     }
@@ -58,11 +64,11 @@ function validateUser(){
     }
     
     $result = array(
-        'username' => $_POST['username'],
+        'username' => $params->username,
 
-        'email' => $_POST['email-user-sign'],
+        'email' => $params->email,
 
-        'password' => password_hash($_POST['passwd-user'], PASSWORD_DEFAULT),
+        'password' => password_hash($params->passwd1, PASSWORD_DEFAULT),
 
         'token_check' => generate_Token_secure(20),
 

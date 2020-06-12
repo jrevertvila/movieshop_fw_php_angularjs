@@ -1,16 +1,3 @@
-// (function() {
-//     'use strict';
-  
-//     movieshop.controller('menu', AppCtrl);
-  
-//     function AppCtrl($scope) {
-//       $scope.currentNavItem = 'page1';
-//       $scope.goto = function(page) {
-//         $scope.status = "Goto " + page;
-//       };
-//     }
-//   })();
-
 movieshop.controller('menuCtrl', ["$scope","services","$document",function($scope,services,$document){
   if (localStorage.getItem('authToken')!==null && localStorage.getItem('authToken')!= ""){
     $scope.profile_header_avatar = {'background-image':'url(' + localStorage.getItem('user_avatar') + ')'}

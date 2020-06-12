@@ -17,15 +17,13 @@
 
                 <input required type="email" ng-model="login.email" id="email-user" name="email_user" class="item-form-login" placeholder="Email *">
                 <input required type="password" ng-model="login.passwd" id="passwd-user" name="passwd_user" class="item-form-login" placeholder="Password *">
-                <!-- <input type="email" name="email_user" id="email_user" class="item-form-login" placeholder="Email"> -->
-                <!-- <input type="password" name="passwd_user" id="passwd_user" class="item-form-login" placeholder="Password"> -->
-        
+
                 <input name="login" class="login-button" id="login-button" type="button" value="Log In" ng-click="submitLogin()"/>
                 <div class="div-left">
                     <a href="#" class="forgot-passwd" data-tr="Forgot password?">Forgot password?</a>
                     <div>
                         <span data-tr="Don’t have an account?">Don’t have an account?</span>
-                        <a href="#" data-tr="Sign up" style="margin-left: 5px;" class="open-register">Sign up</a>
+                        <a href="#register" data-tr="Sign up" style="margin-left: 5px;" class="open-register">Sign up</a>
                     </div>
                 </div>
                 <div class="social-btns">
@@ -34,8 +32,6 @@
                         <i class="fab fa-github"></i> Sign in with GitHub
                     </a>
                 </div>
-                <!-- <a href="#" class="checkLogged">CHECK LOGGED</a>
-                <a href="#" class="logoutGoogle">LOG OUT</a>  -->
             </form>
             
         </div>

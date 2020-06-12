@@ -62,6 +62,11 @@ function ($routeProvider, $locationProvider) {
                         templateUrl: "frontend/modules/login/view/login.view.html",
                         controller: "loginCtrl"
                 })
+
+                .when("/register", {
+                        templateUrl: "frontend/modules/login/view/register.view.html",
+                        controller: "registerCtrl"
+                })
                 
                 .otherwise("/", {redirectTo: '/'});
     }]);
