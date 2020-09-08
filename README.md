@@ -1,4 +1,4 @@
-# Movieshop_Fw_PHP (Development name)
+# Movieshop_Fw_PHP_AngularJS (Development name)
 This web application consists of the administration and provision of movies for all those people who want to watch any movie without worrying about searching on Netflix, HBO or any online streaming platform for movies. The idea is to link the accounts of Netflix, HBO, Amazon Video, Crunchyroll or different video platforms and easily find the content instantly with the greatest amount of ratings and comments.
 
 ## Preview
